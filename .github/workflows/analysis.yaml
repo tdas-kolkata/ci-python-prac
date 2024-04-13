@@ -1,7 +1,7 @@
-name: code-analysis
+name: coverage-report
 on: [workflow_call]
 jobs:
-    code-analysis:
+    code-coverage-check:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout

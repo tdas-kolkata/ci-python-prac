@@ -1,10 +1,5 @@
-name: Code Analysis
-on:
-    push:
-        branches: ["master", "develop"]
-    pull_request: 
-        branches: ["master", "develop"]
-
+name: code-analysis
+on: [workflow_call]
 jobs:
     code-analysis:
         runs-on: ubuntu-latest
@@ -25,3 +20,4 @@ jobs:
             - name: Generate code coverage report
               run: |
                 poetry run coverage run -m pytest
+                poetry run coverage report -m 

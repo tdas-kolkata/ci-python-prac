@@ -1,9 +1,9 @@
 name: Code Analysis
 on:
-    push:
-        branches: ["master", "develop"]
-    pull_request: 
-        branches: ["master", "develop"]
+    workflow_run: 
+        workflows: ["Python application CI process"]
+        types: 
+            - completed
 
 jobs:
     code-analysis:

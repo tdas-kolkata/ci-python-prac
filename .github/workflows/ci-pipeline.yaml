@@ -1,0 +1,27 @@
+name: Python application CI process
+on:
+    push:
+        branches: ["master", "develop"]
+    pull_request: 
+        branches: ["master", "develop"]
+
+jobs:
+    build_test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: setup python3.12
+              uses: actions/setup-python
+              with:
+                python-version: "3.12"
+
+            - name: Add extra dependencies
+              run: |
+                pip install poetry
+                poetry install --with dev
+
+            - name: run pytest
+              run : |
+                poetry run pytest -sv

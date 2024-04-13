@@ -1,4 +1,4 @@
-name: code-analysis
+name: coverage-report
 on: [workflow_call]
 jobs:
     code-analysis:

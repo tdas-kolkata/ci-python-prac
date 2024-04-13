@@ -1,7 +1,5 @@
 name: Python application CI process
 on:
-    push:
-        branches: ["master", "develop"]
     pull_request: 
         branches: ["master", "develop"]
 

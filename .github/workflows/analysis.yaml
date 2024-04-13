@@ -20,3 +20,4 @@ jobs:
             - name: Generate code coverage report
               run: |
                 poetry run coverage run -m pytest
+                poetry run coverage report -m 

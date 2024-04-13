@@ -1,0 +1,22 @@
+name: code-analysis
+on: [workflow_call]
+jobs:
+    code-analysis:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install Python
+              uses: actions/setup-python@v4
+              with: 
+                python-version: "3.12"
+
+            - name: Add dependencies for python
+              run: |
+                pip install poetry
+                poetry install --with dev
+
+            - name: Generate code coverage report
+              run: |
+                poetry run coverage run -m pytest

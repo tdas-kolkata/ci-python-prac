@@ -25,5 +25,5 @@ jobs:
                 poetry run pytest -sv
 
     code-analysis:
-        needs: build_test
+        # needs: build_test
         uses: ./.github/workflows/analysis.yaml

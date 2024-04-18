@@ -32,4 +32,6 @@ jobs:
       needs: 
         - build_test
         - code-analysis
+      permissions:
+          pull-requests: write
       uses: ./.github/workflows/add-comment.yaml

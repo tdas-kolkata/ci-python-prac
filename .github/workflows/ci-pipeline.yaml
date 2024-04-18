@@ -27,3 +27,11 @@ jobs:
     code-analysis:
         # needs: build_test
         uses: ./.github/workflows/analysis.yaml
+
+    comment:
+      needs: 
+        - build_test
+        - code-analysis
+      permissions:
+          pull-requests: write
+      uses: ./.github/workflows/add-comment.yaml

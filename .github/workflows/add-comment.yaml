@@ -3,6 +3,8 @@ on: [workflow_call]
 jobs:
     comment:
         runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
         steps:
             - name: add comment
               uses: mshick/add-pr-comment@v2

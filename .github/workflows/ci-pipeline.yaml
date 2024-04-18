@@ -27,3 +27,9 @@ jobs:
     code-analysis:
         # needs: build_test
         uses: ./.github/workflows/analysis.yaml
+
+    comment:
+      needs: 
+        - build_test
+        - code-analysis
+      uses: ./.github/workflows/add-comment.yaml

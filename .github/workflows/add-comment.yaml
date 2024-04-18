@@ -1,0 +1,12 @@
+name: Add comment
+on: [workflow_call]
+jobs:
+    comment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: add comment
+              uses: mshick/add-pr-comment@v2
+              with:
+                message: |
+                  Passed All CI checks
+
